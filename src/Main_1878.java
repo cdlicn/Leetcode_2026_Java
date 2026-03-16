@@ -7,11 +7,11 @@ public class Main_1878 {
     public int[] getBiggestThree(int[][] grid) {
         int m = grid.length, n = grid[0].length;
         int[][] preSum1 = new int[m + 1][n + 1], preSum2 = new int[m + 1][n + 1];
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
                 int x = i - 1, y = j - 1;
-                preSum1[i][j] = preSum1[x][y] + grid[i - 1][j - 1];
-                preSum2[i][j] = preSum2[x][y] + grid[i - 1][j];
+                preSum1[i][j] = preSum1[x][y] + grid[x][y];
+                preSum2[i][j - 1] = preSum2[x][j] + grid[x][y];
             }
         }
 
