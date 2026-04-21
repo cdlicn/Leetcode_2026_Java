@@ -4,7 +4,7 @@ class Main_1722 {
     public int minimumHammingDistance(int[] source, int[] target, int[][] allowedSwaps) {
         int n = source.length;
         List<Integer>[] g = new ArrayList[n];
-        Arrays.setAll(g, _ -> new ArrayList<>());
+        Arrays.setAll(g, a -> new ArrayList<>());
         for (int[] e : allowedSwaps) {
             int i = e[0];
             int j = e[1];
