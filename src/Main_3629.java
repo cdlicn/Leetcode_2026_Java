@@ -32,7 +32,7 @@ public class Main_3629 {
         for (int i = 0; i < n; i++) {
             for (int p : primeFactors[nums[i]]) {
                 // 对于质数 p，可以跳到下标 i
-                groups.computeIfAbsent(p, _ -> new ArrayList<>()).add(i);
+                groups.computeIfAbsent(p, a -> new ArrayList<>()).add(i);
             }
         }
 
@@ -48,7 +48,7 @@ public class Main_3629 {
                 if (i == n - 1) {
                     return ans;
                 }
-                List<Integer> idx = groups.computeIfAbsent(nums[i], _ -> new ArrayList<>());
+                List<Integer> idx = groups.computeIfAbsent(nums[i], a -> new ArrayList<>());
                 idx.add(i + 1);
                 if (i > 0) {
                     idx.add(i - 1);
